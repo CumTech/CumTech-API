@@ -20,13 +20,13 @@ const userRoute = require('./routes/userRoute');
 const wishlistRoute = require('./routes/wishlistRoute');
 
 //-----------------consumo de rutas-----------------//
-app.use("/address", addressRoute);
-app.use("/category", categoryRoute);
-app.use("/orderdetail", orderDetailRoute);
-app.use("/order", orderRoute);
-app.use("/product", productRoute);
-app.use("/user", userRoute);
-app.use("/wishlist", wishlistRoute);
+//app.use("/address", addressRoute);
+//app.use("/category", categoryRoute);
+//app.use("/orderdetail", orderDetailRoute);
+//app.use("/order", orderRoute);
+//app.use("/product", productRoute);
+//app.use("/user", userRoute);
+//app.use("/wishlist", wishlistRoute);
 
 
 app.get("/", (req, res) => {
