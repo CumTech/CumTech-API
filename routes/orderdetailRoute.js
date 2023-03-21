@@ -3,7 +3,7 @@ const {Router} = express;
 const mongoose = require('mongoose');
 const OrderDetailModelCreator = require('../models/orderdetailsModel');
 const routes = Router();
-const urlDB = "mongodb://127.0.0.1:27017/cumtech";
+const urlDB = process.env.MONGODB_URI;
 
 
 routes.get('/', async (req, res) => {

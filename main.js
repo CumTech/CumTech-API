@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
     res.send("Bienvenido a la API de Ecommerce");
 });
 //-----------------Servidor-----------------//
-app.listen(3000, () => {
+app.listen(9000, () => {
     console.log('Server running on port 9000');
 });
 

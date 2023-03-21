@@ -3,7 +3,7 @@ const {Router} = express;
 const mongoose = require('mongoose');
 const AddressModelCreator = require('../models/addressModel');
 const routes = Router();
-const urlDB = "mongodb://127.0.0.1:27017/cumtech";
+const urlDB = process.env.MONGODB_URI;
 
 //-----------------Métodos-----------------//
 
