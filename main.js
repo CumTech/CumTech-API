@@ -3,7 +3,6 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const http = require('node:http');
 
 //-----------------App-----------------//
 const app = express();
@@ -29,8 +28,13 @@ app.use("/product", productRoute);
 app.use("/user", userRoute);
 app.use("/wishlist", wishlistRoute);
 
+
+app.get("/", (req, res) => {
+    res.send("Bienvenido a la API de Ecommerce");
+});
 //-----------------Servidor-----------------//
-const server = http.createServer(app);
-server.listen(3000, () => {
+app.listen(3000, () => {
     console.log('Server running on port 9000');
 });
+
+module.exports = app;
