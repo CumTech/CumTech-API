@@ -9,7 +9,7 @@ const app = express();
 
 //-----------------Middlewares-----------------//
 app.use(bodyParser.json());
-
+app.use(cors())
 //-----------------Routes-----------------//
 const addressRoute = require('./routes/addressRoute');
 const categoryRoute = require('./routes/categoryRoute');
