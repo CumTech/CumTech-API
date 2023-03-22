@@ -14,7 +14,7 @@ app.use(cors())
 //-----------------Routes-----------------//
 const addressRoute = require('./routes/addressRoute');
 const categoryRoute = require('./routes/categoryRoute');
-const orderDetailRoute = require('./routes/orderDetailRoute');
+const orderDetailRoute = require('./routes/orderdetailRoute');
 const orderRoute = require('./routes/orderRoute');
 const productRoute = require('./routes/productRoute');
 const userRoute = require('./routes/userRoute');
