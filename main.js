@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(cors())
 
 //-----------------Routes-----------------//
-// const addressRoute = require('./routes/addressRoute');
+const addressRoute = require('./routes/addressRoute');
 // const categoryRoute = require('./routes/categoryRoute');
 // const orderDetailRoute = require('./routes/orderDetailRoute');
 // const orderRoute = require('./routes/orderRoute');
@@ -28,7 +28,7 @@ app.use(cors())
 // const wishlistRoute = require('./routes/wishlistRoute');
 
 //-----------------consumo de rutas-----------------//
-// app.use("/address", addressRoute);
+app.use("/address", addressRoute);
 // app.use("/category", categoryRoute);
 // app.use("/orderdetail", orderDetailRoute);
 // app.use("/order", orderRoute);
