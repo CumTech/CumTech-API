@@ -19,25 +19,11 @@ const orderRoute = require('./routes/orderRoute');
 const productRoute = require('./routes/productRoute');
 const userRoute = require('./routes/userRoute');
 const wishlistRoute = require('./routes/wishlistRoute');
-const addressRoute = require('./routes/addressRoute');
-const categoryRoute = require('./routes/categoryRoute');
-const orderDetailRoute = require('./routes/orderDetailRoute');
-const orderRoute = require('./routes/orderRoute');
-const productRoute = require('./routes/productRoute');
-const userRoute = require('./routes/userRoute');
-const wishlistRoute = require('./routes/wishlistRoute');
 
 //-----------------consumo de rutas-----------------//
 app.use("/address", addressRoute);
 app.use("/category", categoryRoute);
 // app.use("/orderdetail", orderDetailRoute);
-app.use("/order", orderRoute);
-app.use("/product", productRoute);
-app.use("/user", userRoute);
-app.use("/wishlist", wishlistRoute);
-app.use("/address", addressRoute);
-app.use("/category", categoryRoute);
-app.use("/orderdetail", orderDetailRoute);
 app.use("/order", orderRoute);
 app.use("/product", productRoute);
 app.use("/user", userRoute);
