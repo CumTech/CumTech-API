@@ -31,7 +31,7 @@ app.use("/wishlist", wishlistRoute);
 
 //-----------------Ruta raíz-----------------//
 app.get("/", (req, res) => {
-    res.send("Bienvenido a la API de Ecommerce");
+    res.send("Bienvenido a la API de Ecommerce de la app CumTech");
 });
 
 
