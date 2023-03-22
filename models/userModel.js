@@ -30,6 +30,4 @@ const userSchema = new Schema({
     }
 });
 
-console.log('User model loaded');
-
 module.exports = (connection) => connection.model('users', userSchema);

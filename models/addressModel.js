@@ -37,6 +37,4 @@ const addressSchema = new Schema({
     }
 });
 
-console.log('Address model loaded');
-
 module.exports = (connection) => connection.model('address', addressSchema);

@@ -13,6 +13,4 @@ const orderdetailsSchema = new Schema({
     }
 });
 
-console.log('Order Details model loaded');
-
 module.exports = (connection) => connection.model('orderdetails', orderdetailsSchema);

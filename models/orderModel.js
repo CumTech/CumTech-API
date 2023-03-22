@@ -23,6 +23,4 @@ const orderSchema = new Schema({
     }
 });
 
-console.log('Order model loaded');
-
 module.exports = (connection) => connection.model('order', orderSchema);
