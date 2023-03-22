@@ -29,6 +29,4 @@ const productSchema = new Schema({
     }
 });
 
-console.log('Product model loaded');
-
 module.exports = (connection) => connection.model('product', productSchema);

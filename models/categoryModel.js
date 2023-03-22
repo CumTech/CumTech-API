@@ -16,6 +16,4 @@ const categorySchema = new Schema({
     }
 });
 
-console.log('Category model loaded');
-
 module.exports = (connection) => connection.model('category', categorySchema);
