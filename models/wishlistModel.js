@@ -13,4 +13,4 @@ const wishlistSchema = new Schema({
     }
 });
 
-module.exports = (connection) => connection.model('users', wishlistSchema);
+module.exports = (connection) => connection.model('wishlist', wishlistSchema);
