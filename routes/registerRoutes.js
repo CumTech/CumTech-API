@@ -1,14 +1,15 @@
 const express = require("express");
 const { Router } = express;
 const mongoose = require("mongoose")
-const UserModelCreator = require("../model/userModel")
+const UserModelCreator = require("../models/userModel")
 const routes = Router();
-const dburl = "mongodb://127.0.0.1:27017/prueba1";
+// const urlDB = "mongodb+srv://LurchingDart:relampago81@cumdata.z4azfea.mongodb.net/shop"
+const urlDB = process.env.MONGODB_URI;
 const jwt = require("jsonwebtoken");
 const jwt_token = "TOKEN";
 
 routes.post("/", async (req, res) => {
-    const connection = await mongoose.createConnection(dburl);
+    const connection = await mongoose.createConnection(urlDB);
     try {
         const UserModel = UserModelCreator(connection);
         const { name, email, password } = req.body;
