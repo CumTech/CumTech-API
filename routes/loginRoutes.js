@@ -23,7 +23,7 @@ routes.post("/", async (req, res) => {
                 { _id: user._id, email },
                 jwt_token,
                 {
-                    expiresIn: "2h",
+                    expiresIn: "720h",
                 }
             );
             user = {...user._doc,token};
