@@ -3,7 +3,6 @@ const { Router } = express;
 const mongoose = require("mongoose")
 const UserModelCreator = require("../models/userModel")
 const routes = Router();
-// const urlDB = "mongodb+srv://LurchingDart:relampago81@cumdata.z4azfea.mongodb.net/shop"
 const urlDB = process.env.MONGODB_URI;
 const jwt = require("jsonwebtoken");
 const jwt_token = "TOKEN";

@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const OrderModelCreator = require('../models/orderModel');
 const routes = Router();
 const urlDB = process.env.MONGODB_URI;
-// const urlDB = "mongodb+srv://LurchingDart:relampago81@cumdata.z4azfea.mongodb.net/shop"
 
 routes.get('/', async (req, res) => {
     const connection = await mongoose.createConnection(urlDB);

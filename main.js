@@ -3,7 +3,6 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-// const htpp = require('http');
 
 //-----------------App-----------------//
 const app = express();
@@ -42,12 +41,8 @@ app.get("/", (req, res) => {
 
 
 //-----------------Servidor-----------------//
-// const server = htpp.createServer(app);
 app.listen(9000, () => {
     console.log('Server running on port 9000');
 });
-// server.listen(9000, () => {
-//     console.log('Server running on port 9000');
-// });
 
 module.exports = app;

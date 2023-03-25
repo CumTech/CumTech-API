@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const AddressModelCreator = require('../models/addressModel');
 const routes = Router();
 const urlDB = process.env.MONGODB_URI;
-// const urlDB = "mongodb+srv://LurchingDart:relampago81@cumdata.z4azfea.mongodb.net/shop"
 
 //-----------------Métodos-----------------//
 
