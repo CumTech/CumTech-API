@@ -8,11 +8,11 @@ const userSchema = new Schema({
     },
     lastName: {
         type: String,
-        default: null
+        default: ""
     },
     username: {
         type: String,
-        default: null
+        default: ""
     },
     email: { 
         type: String, 
@@ -34,12 +34,12 @@ const userSchema = new Schema({
     },
     age: {
         type: Number,
-        default: null
+        default: undefined
     },
     address: {
         type: Schema.Types.ObjectId,
         ref: 'address',
-        default: null
+        default: ""
     }
 });
 
