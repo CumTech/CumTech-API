@@ -52,6 +52,22 @@ routes.get('/user/:userID', async (req, res) => {
     }
 });
 
+routes.get('/userProducts/:userId', async (req, res) => {
+    const connection = await mongoose.createConnection(urlDB);
+    try {
+        const WishlistModel = WishlistModelCreator(connection);
+        const data = await WishlistModel.find({ user: req.params.userId }).populate('product');
+        res.json(data);
+        connection.close();
+    } catch (error) {
+        console.log(error);
+        res.status(500);
+        res.json({error: 'Internal server error'});
+        res.json({message: error.message})
+    }
+});
+
+
 routes.post('/', async (req, res) => {
     const connection = await mongoose.createConnection(urlDB);
     try {
