@@ -56,7 +56,7 @@ routes.get('/userProducts/:userId', async (req, res) => {
     const connection = await mongoose.createConnection(urlDB);
     try {
         const WishlistModel = WishlistModelCreator(connection);
-        const data = await WishlistModel.find({ user: req.params.userId }).populate('product');
+        const data = await WishlistModel.find({ user: req.params.userId }).populate('products');
         res.json(data);
         connection.close();
     } catch (error) {
