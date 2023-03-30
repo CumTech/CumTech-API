@@ -8,7 +8,8 @@ const userSchema = new Schema({
     },
     lastName: {
         type: String,
-        required: false
+        required: true,
+        default: null
     },
     email: { 
         type: String, 
@@ -30,7 +31,8 @@ const userSchema = new Schema({
     },
     age: {
         type: Number,
-        required: false
+        required: true,
+        default: null
     },
     address: {
         type: Schema.Types.ObjectId,
