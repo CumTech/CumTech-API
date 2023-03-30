@@ -39,7 +39,7 @@ const userSchema = new Schema({
     address: {
         type: Schema.Types.ObjectId,
         ref: 'address',
-        default: ""
+        default: undefined
     }
 });
 
