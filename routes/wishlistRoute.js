@@ -5,7 +5,8 @@ const WishlistModelCreator = require('../models/wishlistModel');
 const UserModelCreator = require('../models/userModel');
 const ProductModelCreator = require('../models/productModel');
 const routes = Router();
-const urlDB = process.env.MONGODB_URI;
+// const urlDB = process.env.MONGODB_URI;
+const urlDB = "mongodb+srv://LurchingDart:relampago81@cumdata.z4azfea.mongodb.net/shop"
 
 
 
