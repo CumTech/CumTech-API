@@ -53,11 +53,13 @@ routes.get('/user/:userID', async (req, res) => {
     }
 });
 
-routes.get('/userProducts/:userId', async (req, res) => {
+routes.get('/user/products/:userID', async (req, res) => {
     const connection = await mongoose.createConnection(urlDB);
     try {
+        const UserModel = UserModelCreator(connection);
+        const ProductModel = ProductModelCreator(connection);
         const WishlistModel = WishlistModelCreator(connection);
-        const data = await WishlistModel.find({ user: req.params.userId }).populate('products');
+        const data = await WishlistModel.find({ "user": req.params.userID}).populate("product");
         res.json(data);
         connection.close();
     } catch (error) {
