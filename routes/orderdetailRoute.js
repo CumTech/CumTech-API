@@ -1,7 +1,7 @@
 const express = require('express');
 const {Router} = express;
 const mongoose = require('mongoose');
-const OrderDetailModelCreator = require('../models/orderdetailsModel');
+const OrderDetailModelCreator = require('../models/orderdetailModel');
 const routes = Router();
 const urlDB = process.env.MONGODB_URI;
 // const urlDB = "mongodb+srv://LurchingDart:relampago81@cumdata.z4azfea.mongodb.net/shop"

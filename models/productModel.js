@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const {connection} = require("mongoose");
 const { Schema } = mongoose;
 
 const productSchema = new Schema({
@@ -11,22 +10,26 @@ const productSchema = new Schema({
         type: Number,
         required: true,
     },
-    category: {
-        type: Schema.Types.ObjectId,
-        ref: 'category'
-    },
     urlImage: {
         type: String,
         required: true,
     },
     stock: {
         type: Number,
-        required: true,
+        required: false,
+        default: 0,
     },
     description: {
         type: String,
-        required: true,
-    }
+        required: false,
+        default: undefined,
+    },
+    category: {
+        type: Schema.Types.ObjectId,
+        ref: 'category',
+        required: false,
+        default: undefined,
+    },
 });
 
 module.exports = (connection) => connection.model('product', productSchema);

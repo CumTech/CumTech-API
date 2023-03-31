@@ -3,7 +3,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-// const htpp = require('http');
+const htpp = require('http');
 
 //-----------------App-----------------//
 const app = express();
@@ -15,8 +15,8 @@ app.use(cors())
 //-----------------Routes-----------------//
 const addressRoute = require('./routes/addressRoute');
 const categoryRoute = require('./routes/categoryRoute');
-const loginRoute = require("./routes/loginRoutes");
-const registerRoute = require("./routes/registerRoutes");
+const loginRoute = require("./routes/loginRoute");
+const registerRoute = require("./routes/registerRoute");
 const orderDetailRoute = require('./routes/orderdetailRoute');
 const orderRoute = require('./routes/orderRoute');
 const productRoute = require('./routes/productRoute');
@@ -25,29 +25,29 @@ const wishlistRoute = require('./routes/wishlistRoute');
 const authenticator = require("./auth")
 
 //-----------------consumo de rutas-----------------//
-app.use("/address", addressRoute);
-app.use("/category", categoryRoute);
-app.use("/orderdetail", orderDetailRoute);
-app.use("/order", orderRoute);
-app.use("/product", productRoute);
-app.use("/user", authenticator, userRoute);
-app.use("/wishlist", wishlistRoute);
+app.use("/addresses", addressRoute);
+app.use("/categories", categoryRoute);
+app.use("/orderdetails", orderDetailRoute);
+app.use("/orders", orderRoute);
+app.use("/products", productRoute);
+app.use("/users", authenticator, userRoute);
+app.use("/wishlists", wishlistRoute);
 app.use("/login", loginRoute);
 app.use("/register", registerRoute);
 
 //-----------------Ruta raíz-----------------//
 app.get("/", (req, res) => {
-    res.send("Bienvenido a la API de Ecommerce de la app CumTech");
+    res.send("Welcome to the API of CumData the best shop in the world");
 });
 
 
 //-----------------Servidor-----------------//
-// const server = htpp.createServer(app);
-app.listen(9000, () => {
-    console.log('Server running on port 9000');
-});
-// server.listen(9000, () => {
+const server = htpp.createServer(app);
+// app.listen(9000, () => {
 //     console.log('Server running on port 9000');
 // });
+server.listen(9000, () => {
+    console.log('Server running on port 9000');
+});
 
 module.exports = app;

@@ -22,7 +22,7 @@ routes.post("/", async (req, res) => {
         let data = await UserModel.findOne({ "email": req.body.email });
 
         if (data) {
-            res.status(409).send("User Already Exist. Please Login");
+            res.status(409).send("User Already Exist. Please Login or Register with a different email");
         }
         else {
             let user = new UserModel(req.body);

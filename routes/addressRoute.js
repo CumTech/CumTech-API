@@ -2,6 +2,7 @@ const express = require('express');
 const {Router} = express;
 const mongoose = require('mongoose');
 const AddressModelCreator = require('../models/addressModel');
+const UserModelCreator = require('../models/userModel');
 const routes = Router();
 const urlDB = process.env.MONGODB_URI;
 // const urlDB = "mongodb+srv://LurchingDart:relampago81@cumdata.z4azfea.mongodb.net/shop"
@@ -24,7 +25,7 @@ routes.get("/", async(req, res) => {
 });
 
 //Método para un get de un elemento
-routes.get("/:id", async(req, res) => {
+routes.get("/address/:id", async(req, res) => {
     const connection = await mongoose.createConnection(urlDB)
     try {
         const AddressModel = AddressModelCreator(connection);
@@ -53,6 +54,22 @@ routes.post("/", async(req, res) => {
         res.json({error: error.message});
     }
 });
+
+routes.post("/update/address-of-user", async(req, res) => {
+    const connection = await mongoose.createConnection(urlDB)
+    try {
+        const AddressModel = AddressModelCreator(connection);
+        const address = new AddressModel(req.body);
+        const data = await address.save();
+        res.json(data);
+        connection.close();
+    } catch (error) {
+        connection.close();
+        res.status(500);
+        res.json({error: error.message});
+    }
+});
+
 
 //Método para un delete
 routes.delete("/:id", async(req, res) => {

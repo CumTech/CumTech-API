@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const {connection} = require("mongoose");
+const validator = require('validator'); // https://www.npmjs.com/package/validator
+
+
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
@@ -9,11 +11,16 @@ const userSchema = new Schema({
     },
     lastName: {
         type: String,
-        default: ""
+        default: undefined
+    },
+    age: {
+        type: Number,
+        default: undefined
     },
     username: {
         type: String,
-        default: ""
+        unique: true,
+        default: undefined
     },
     email: { 
         type: String, 
@@ -33,15 +40,11 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    age: {
-        type: Number,
-        default: undefined
-    },
     address: {
         type: Schema.Types.ObjectId,
         ref: 'address',
         default: undefined
-    }
+    },
 });
 
-module.exports = (connection) => connection.model('users', userSchema);
+module.exports = (connection) => connection.model('user', userSchema);

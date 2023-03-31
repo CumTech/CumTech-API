@@ -2,9 +2,12 @@ const express = require('express');
 const {Router} = express;
 const mongoose = require('mongoose');
 const WishlistModelCreator = require('../models/wishlistModel');
+const UserModelCreator = require('../models/userModel');
+const ProductModelCreator = require('../models/productModel');
 const routes = Router();
 const urlDB = process.env.MONGODB_URI;
 // const urlDB = "mongodb+srv://LurchingDart:relampago81@cumdata.z4azfea.mongodb.net/shop"
+
 
 
 routes.get('/', async (req, res) => {
@@ -23,7 +26,7 @@ routes.get('/', async (req, res) => {
     }
 });
 
-routes.get('/:id', async (req, res) => {
+routes.get('/wishlist/:id', async (req, res) => {
     const connection = await mongoose.createConnection(urlDB);
     try {
         const WishlistModel = WishlistModelCreator(connection);
@@ -38,26 +41,13 @@ routes.get('/:id', async (req, res) => {
     }
 });
 
-routes.get('/user/:userID', async (req, res) => {
+routes.get('/user/products/:userID', async (req, res) => {
     const connection = await mongoose.createConnection(urlDB);
     try {
+        const UserModel = UserModelCreator(connection);
+        const ProductModel = ProductModelCreator(connection);
         const WishlistModel = WishlistModelCreator(connection);
-        const data = await WishlistModel.find({ "user": req.params.userID});
-        res.json(data);
-        connection.close();
-    } catch (error) {
-        console.log(error);
-        res.status(500);
-        res.json({error: 'Internal server error'});
-        res.json({message: error.message})
-    }
-});
-
-routes.get('/userProducts/:userId', async (req, res) => {
-    const connection = await mongoose.createConnection(urlDB);
-    try {
-        const WishlistModel = WishlistModelCreator(connection);
-        const data = await WishlistModel.find({ user: req.params.userId }).populate('products');
+        const data = await WishlistModel.find({ "user": req.params.userID}).populate("product");
         res.json(data);
         connection.close();
     } catch (error) {

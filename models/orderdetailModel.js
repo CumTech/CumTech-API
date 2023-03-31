@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const orderdetailsSchema = new Schema({
+const orderdetailSchema = new Schema({
     product: {
         type: Schema.Types.ObjectId,
         ref: 'product'
@@ -12,4 +12,4 @@ const orderdetailsSchema = new Schema({
     }
 });
 
-module.exports = (connection) => connection.model('orderdetails', orderdetailsSchema);
+module.exports = (connection) => connection.model('orderdetail', orderdetailSchema);

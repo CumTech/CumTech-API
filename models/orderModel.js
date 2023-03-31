@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
-const {connection} = require("mongoose");
 const { Schema } = mongoose;
 
 const orderSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
-        ref: 'users'
+        ref: 'user'
     },
     total: {
         type: Number,
