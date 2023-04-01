@@ -79,7 +79,7 @@ routes.delete('/:id', async (req, res) => {
     const connection = await mongoose.createConnection(urlDB);
     try{
         const WishlistModel = WishlistModelCreator(connection);
-        const data = await WishlistModel.findOneAndDelete(req.params.id, , req.body);
+        const data = await WishlistModel.findOneAndDelete(req.params.id, req.body);
         res.json(data);
         connection.close();
     } catch (error) {
