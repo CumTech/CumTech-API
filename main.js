@@ -29,7 +29,7 @@ app.use("/addresses", addressRoute);
 app.use("/categories", categoryRoute);
 app.use("/orderdetails", orderDetailRoute);
 app.use("/orders", orderRoute);
-app.use("/products", productRoute);
+app.use("/product", productRoute);
 app.use("/users", authenticator, userRoute);
 app.use("/wishlists", wishlistRoute);
 app.use("/login", loginRoute);
